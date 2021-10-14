@@ -16,11 +16,9 @@ A website that uses web API to get weather data by ZIP code and log data entries
 
 - Download project files to your local machine
 - Download and install [Node.js](https://nodejs.org/)
-- In the project folder, run the following commands to install dependancies:
+- In the project folder, run the following command to install dependancies:
 ```
-npm install express
-npm install body-parser
-npm install cors
+npm install
 ```
 - To start the server, excute:
 ```
