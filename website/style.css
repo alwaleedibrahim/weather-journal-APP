@@ -29,3 +29,8 @@ input {
     font-weight: bolder;
     padding-top: 1em;
 }
+
+.alert {
+    color: red;
+    margin-bottom: 15px;
+}
