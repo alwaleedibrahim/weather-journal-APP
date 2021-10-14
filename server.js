@@ -34,11 +34,16 @@ app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
 
+// Fetch data from end point
 app.get("/getData", (req, res) => {
     res.send(projectData);
 });
 
+// Add data to project data object
 app.post("/addData", (req, res) => {
+    // Use spread syntax to cast the request body into projectData
+    // Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
     projectData = { ...req.body };
+    // End the response without sending any data
     res.end();
 });
