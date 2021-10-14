@@ -8,14 +8,17 @@ const apiKey = 'f25bd4111fdec5a8948fc32befe9c7d8';
 let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
+// Load project data by fetching /getData route
 const loadProjectData = async () => {
     const getData = await (await fetch("/getData")).json();
+    // Loop over the data and dynamically add them to the page DOM structure
     for (let prop in getData) {
-        const x = document.querySelector(`#${prop}`);
-        x.innerHTML = `<b>${prop}: </b>${getData[prop]}`;
+        const element = document.querySelector(`#${prop}`);
+        element.innerHTML = `<b>${prop}: </b>${getData[prop]}`;
     }
 }
 
+// Add data to the server end point
 const addData = async (data) => {
     await fetch("/addData", {
         method: 'POST',
@@ -26,8 +29,7 @@ const addData = async (data) => {
     });
 }
 
-// add event listener to generate button
-// query selector
+// Add event listener to generate button
 document.querySelector('#generate').addEventListener('click', async () => {
     const zipCode = document.querySelector("#zip").value;
     const feelings = document.querySelector('#feelings').value;
@@ -45,4 +47,5 @@ document.querySelector('#generate').addEventListener('click', async () => {
     loadProjectData();
 });
 
-document.addEventListener('DOMContentLoaded', loadProjectData);
+// When page loads, display previously stored data
+document.addEventListener('DOMContentLoaded', loadProjectData());
