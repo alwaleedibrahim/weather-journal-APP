@@ -2,15 +2,15 @@
 projectData = {};
 
 // Setup port
-const port = 8000;
+const port = 3000;
 
 // Require Express to run server and routes
 const express = require("express");
 
-// Requiure body-parser
+// Require body-parser
 const bodyParser = require("body-parser");
 
-// require cors
+// Require cors
 const cors = require("cors");
 
 // Start up an instance of app
@@ -32,4 +32,13 @@ app.use(express.static('website'));
 // Setup Server
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
-})
+});
+
+app.get("/getData", (req, res) => {
+    res.send(projectData);
+});
+
+app.post("/addData", (req, res) => {
+    projectData = { ...req.body };
+    res.end();
+});
