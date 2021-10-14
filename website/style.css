@@ -1,0 +1,31 @@
+#app {
+    background-color: #fff0e5;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+button {
+    background-color: #3a10e5;
+    color: #ffffff;
+    font-weight: 400;
+    padding: 0.4em;
+    font-size: x-large;
+    border: 0px;
+    border-radius: 0.3em;
+}
+
+input {
+    height: 3em;
+}
+
+.holder {
+    margin-bottom: 2em;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.headline {
+    font-size: 3em;
+    font-weight: bolder;
+    padding-top: 1em;
+}
